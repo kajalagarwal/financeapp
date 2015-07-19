@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+<script language='javascript'  type="text/javascript" src="uploadpage.js"></script>
+</head>
+<body>
+<div id="box">    
+<button class="btnprimary"><%= link_to "Log out", logout_path, method: "delete" %></button>
+<h1>Welcome to the Renew Financial App</h1>
+</div>
+<div id='container'>
+<p> Click to Upload a CSV file.</p>
+<button class='btnlarge'> <%= link_to "Upload", purchases_path %></button> 
+</div>
+</body>
+</html>

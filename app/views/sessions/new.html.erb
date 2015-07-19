@@ -1,0 +1,35 @@
+<% provide(:title, 'Log in') %>
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<link  rel="stylesheet" type="text/css" href="sessions.scss"/>
+
+<script language='javascript'  type="text/javascript" src="sessions.js"></script>
+
+</head>
+
+<body>
+<div id="box">
+<h1>Log in</h1>
+</div>
+
+<div id ="container">
+  <div >
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %><br>
+
+      <%= f.submit "Log in",class: "btnlarge" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
+</body>
+</html>

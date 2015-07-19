@@ -1,0 +1,77 @@
+<%= flash[:notice] %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#show").hide();
+    $("#information").click(function(){
+        $("#show").show();
+    });
+   $("#information").mouseenter(function(){
+    $(this).css("background-color", "grey");
+   });
+    $("#information").mouseleave(function(){
+    $(this).css("background-color", "#E6E6E6");
+   });
+
+});
+</script>
+
+<link  rel="stylesheet" type="text/css" href="purchases.scss"/>
+
+<script language='javascript'  type="text/javascript" src="purchases.js"></script>
+
+</head>
+
+<body>
+<div id="box">
+<button  class= "btnprimary"><%= link_to "Log out", logout_path, method: "delete" %></button><br>
+
+<h3>Import a CSV File</h3>
+  <%= form_tag import_purchases_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+ <h3> Gross Money till yet is
+ <% sum=0%>
+ <% @purchases.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>
+ <%= sum %></h3>
+ <div id="show">
+<table border="1" style="width:100%">
+  <thead >
+    <tr>
+      <th>PurchaserName</th>
+      <th>ItemDescription</th>
+      <th>ItemPrice</th>
+      <th>PurchaseQuantity</th>
+       
+      <th>MerchantAddress</th>
+      <th>MerchantName</th>
+       <th>TotalPurchase</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.PurchaserName %></td>
+        <td><%= purchase.ItemDescription %></td>
+        <td><%= purchase.ItemPrice %></td>
+        <td><%= purchase.PurchaseQuantity %></td>
+          <td><%= purchase.MerchantAddress %></td>
+        <td><%= purchase.MerchantName %></td>
+         <td><%= purchase.ItemPrice* purchase.PurchaseQuantity  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  
+  
+</table>
+</div>
+ 
+<button id="information">Look Inside</button>
+</body>
+</html>
