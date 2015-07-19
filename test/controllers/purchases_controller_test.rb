@@ -6,9 +6,6 @@ class PurchasesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get import" do
-    get :import
-    assert_response :success
-  end
+ 
 
 end

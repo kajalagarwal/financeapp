@@ -1,17 +1,1 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  PurchaserName: 
-  ItemDescription: 
-  ItemPrice: 
-  PurchaseQuantity: 
-  MerchantAddress: MyString
-  MerchantName: MyString
-
-two:
-  PurchaserName: 
-  ItemDescription: 
-  ItemPrice: 
-  PurchaseQuantity: 
-  MerchantAddress: MyString
-  MerchantName: MyString

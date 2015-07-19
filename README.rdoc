@@ -9,30 +9,41 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* #Ruby and rails version
+  2.2.1 and 4.2.2
+* #System dependencies
 
-* System dependencies
+* #Configuration
 
-* Configuration
-
-* Database creation
+* #Database creation
+  * Two database created one for the users signing up and other for saving the data of uploaded csv file.
+  * Has also given secure password path to the user data model.
+  * Using the SSL protection.
+  * User datamodel is also validating the data for some required information. 
+  * Like email should be unique,in a given format and always present, name should be present always, and password should match with confirmation.
+  * While looging in it will authenticate the user before giving them an access.
 
 * Database initialization
 
 * How to run the test suite
+  * Use the command: #bundle exec rake test:models to run the test cases of models created
+  *  Use the command: #bundle exec rake test to run all the test cases related to app (controller, model,view).
+   
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services 
+  * You can upload the csv file, but it will only accept the file with correct header values whih are as:
+     *   t.string :PurchaserName
+     * ItemDescription
+     * ItemPrice
+     * PurchaseQuantity
+     * MerchantAddress
+     * MerchantName
+  * else will give you a CSV error.
+  * It will also validate the data given and will accept the file if none of the column is null.
 
 * Deployment instructions
-  First put all the local files on the cloud from th elocal server using ROR internal assets command
-  * For this first put the following commands on the yourapp/app/config/application.rb file.
-  * config.assets.precompile += %w( *.js *.css )
   
-  * config.assets.initialize_on_precompile = false
-  * config.serve_static_assets = true
-  
-  * Run the followiing command on the terminal to get it done
-  * RAILS_ENV=production bundle exec rake assets:precompile
-   
+  * First Get the heroku login and create an app using following commands
+    *heroku create
   * Git add and commit
   * Deploy to the server
