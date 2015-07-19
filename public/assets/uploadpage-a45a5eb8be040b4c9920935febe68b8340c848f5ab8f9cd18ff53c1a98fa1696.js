@@ -1,0 +1,1 @@
+function checkfile(e){var l=new Array(".xlsx",".xls",".csv"),i=e.value;return i=i.substring(i.lastIndexOf(".")),l.indexOf(i)<0?(alert("Invalid file selected, valid files are of "+l.toString()+" types."),!1):!0}
