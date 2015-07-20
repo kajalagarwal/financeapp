@@ -15,7 +15,7 @@
   * While looging in it will authenticate the user before giving them an access.
 
 # Database initialization
-  * #bundle exec rake db:migrate
+  * bundle exec rake db:migrate
   * can run it on the terminal using rails console or for temorary change use rails console --sandbox
   
 # Run Test cases
@@ -23,8 +23,10 @@
   * Test controller and models File are present in the test folder
  
 # How to run the test suite
-  * Use the command: #bundle exec rake test:models on terminal to run the test cases of models created
-  *  Use the command: #bundle exec rake test on terminal to run all the test cases related to app (controller, model,view).
+  * Use the command: 
+     * bundle exec rake test:models on terminal to run the test cases of models created
+  *  Use the command: 
+     * bundle exec rake test on terminal to run all the test cases related to app (controller, model,view).
 
 # Services 
   * You can upload the csv file, but it will only accept the file with correct header values whih are as:
@@ -39,18 +41,18 @@
 
 # Deployment instructions
   *Push all the assets on the clouds first
-    #RAILS_ENV=production bundle exec rake assets:precompile
+    * RAILS_ENV=production bundle exec rake assets:precompile
   * First Get the heroku login and create an app.
   * Git add and commit
   * Login to heroku using 
-  *  #heroku login
+    * heroku login
   *  Create the heroku name
-  *  #heroku create
+    * heroku create
   *  push to heroku
-  *  #git push heroku master
+    * git push heroku master
   *  migrate your db
-  *  #heroku run rake db:migrate
+    * heroku run rake db:migrate
   * Deploy to the server
-  * #heroku ps
-  * #heroku open
-  * Running at #https://kajal-financeapp.herokuapp.com/
+    * heroku ps
+    $ heroku open
+  * Running at ##https://kajal-financeapp.herokuapp.com/
