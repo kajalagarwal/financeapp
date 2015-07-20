@@ -40,7 +40,7 @@
   * It will also validate the data given and will accept the file if none of the column is null.
 
 # Deployment instructions
-  *Push all the assets on the clouds first
+  * Push all the assets on the clouds first
     * RAILS_ENV=production bundle exec rake assets:precompile
   * First Get the heroku login and create an app.
   * Git add and commit
@@ -54,5 +54,6 @@
     * heroku run rake db:migrate
   * Deploy to the server
     * heroku ps
-    $ heroku open
-  * Running at ##https://kajal-financeapp.herokuapp.com/
+    * heroku open
+  * Running at 
+    * https://kajal-financeapp.herokuapp.com/
