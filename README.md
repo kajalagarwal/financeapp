@@ -25,8 +25,6 @@
 # How to run the test suite
   * Use the command: #bundle exec rake test:models on terminal to run the test cases of models created
   *  Use the command: #bundle exec rake test on terminal to run all the test cases related to app (controller, model,view).
-    
-   
 
 # Services 
   * You can upload the csv file, but it will only accept the file with correct header values whih are as:
