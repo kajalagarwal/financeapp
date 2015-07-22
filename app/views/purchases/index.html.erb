@@ -1,5 +1,5 @@
 <%= flash[:notice] %>
-
+<%= will_paginate @purchases %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +38,7 @@ $(document).ready(function(){
 </div>
  <h3> Gross Money till yet is
  <% sum=0%>
- <% @purchases.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>
+ <% @purchases1.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>
  <%= sum %></h3>
  <div id="show">
 <table border="1" style="width:100%">
@@ -71,7 +71,7 @@ $(document).ready(function(){
   
 </table>
 </div>
- 
+ <%= will_paginate @purchases %>
 <button id="information">Look Inside</button>
 </body>
 </html>
