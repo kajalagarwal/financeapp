@@ -37,7 +37,7 @@ $(document).ready(function(){
   <%= link_to button_tag("Download Sample", :id =>'download'), "file.csv"%>
 </div>
 
-<%= @current_user%>
+<%= @current_user.name%>
  <h3> Gross Money till yet is
  <% sum=0%>
  <% @purchases1.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>
