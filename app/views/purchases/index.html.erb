@@ -34,8 +34,10 @@ $(document).ready(function(){
     <%= submit_tag "Import CSV" %>
   <% end %>
   
-  
+  <%= link_to button_tag("Download Sample", :id =>'download'), "file.csv"%>
 </div>
+
+<%= @current_user%>
  <h3> Gross Money till yet is
  <% sum=0%>
  <% @purchases1.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>

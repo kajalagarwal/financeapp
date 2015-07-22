@@ -5,6 +5,7 @@ class PurchasesController < ApplicationController
     @purchases = Purchase.all.paginate(page: params[:page], per_page: 15)
     @purchases1=Purchase.all
     @user=User.all
+    @current_user||=User.find_by(id: session[:user_id])
   end
 
   def import
