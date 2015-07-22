@@ -25,6 +25,7 @@ $(document).ready(function(){
 
 <body>
 <div id="box">
+    <h1> Welcome <%= @current_user.name%> </h1>
 <button  class= "btnprimary"><%= link_to "Log out", logout_path, method: "delete" %></button><br>
 
 <h3>Import a File</h3>
@@ -37,7 +38,7 @@ $(document).ready(function(){
   <%= link_to button_tag("Download Sample", :id =>'download'), "file.csv"%>
 </div>
 
-<%= @current_user.name%>
+
  <h3> Gross Money till yet is
  <% sum=0%>
  <% @purchases1.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>
