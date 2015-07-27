@@ -27,7 +27,7 @@ $(document).ready(function(){
 <div id="box">
    
 <button  class= "btnprimary"><%= link_to "Log out", logout_path, method: "delete" %></button>
- <h3> Welcome <%= @current_user.name%>  </h3>
+<h4>Welcome <%= @current_user %> </h4>
 <h3>Import a File</h3>
 
   <%= form_tag import_purchases_path, multipart: true do %>
@@ -43,6 +43,36 @@ $(document).ready(function(){
  <% sum=0%>
  <% @purchases1.each{ |purchase| sum+= purchase.ItemPrice* purchase.PurchaseQuantity} %>
  <%= sum %></h3>
+<div id ="error">  <%= render 'shared/error_purchmessage' %></div>
+ <div id="container" >
+    
+  <div >
+    <%= form_for(@purch) do |f| %>
+ 
+      <%= f.label :PurchaserName %>
+      <%= f.text_field :PurchaserName %><br>
+
+      <%= f.label :ItemDescription %>
+      <%= f.text_field :ItemDescription %><br>
+      
+       <%= f.label :ItemPrice %>
+      <%= f.number_field :ItemPrice %><br>
+      
+       <%= f.label :MerchantAddress %>
+      <%= f.text_field :MerchantAddress %><br>
+
+      <%= f.label :MerchantName %>
+      <%= f.text_field :MerchantName %><br>
+      
+       <%= f.label :PurchaseQuantity %>
+      <%= f.number_field :PurchaseQuantity %><br>
+
+      
+
+      <%= f.submit "Create my account", class: "btnlarge" %>
+    <% end %>
+  </div>
+</div>
  <div id="show">
 <table border="1" style="width:100%">
   <thead >
@@ -68,6 +98,7 @@ $(document).ready(function(){
         <td><%= purchase.MerchantName %></td>
          <td><%= purchase.ItemPrice * purchase.PurchaseQuantity  %></td>
       </tr>
+      <>
     <% end %>
   </tbody>
   
@@ -77,4 +108,6 @@ $(document).ready(function(){
  <%= will_paginate @purchases %>
 <button id="information">Look Inside</button>
 </body>
+
+
 </html>
