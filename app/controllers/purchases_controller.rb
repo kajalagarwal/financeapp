@@ -22,6 +22,14 @@ class PurchasesController < ApplicationController
    end
    def create
     @purch = Purchase.create!(purch_params)
+    if @purch.save
+      # Handle a successful save.
+      flash[:success] = "Welcome to the Renew Financial App!"
+      redirect_to purchases_path, :flash => { :success => "Welcome to the Renew Financial App!" }
+    else
+     redirect_to index_path, notice: "Invalid CSV file format. Please check the file for header match."
+    end
+  
    end
 
   private

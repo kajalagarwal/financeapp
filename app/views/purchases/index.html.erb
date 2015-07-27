@@ -27,7 +27,7 @@ $(document).ready(function(){
 <div id="box">
    
 <button  class= "btnprimary"><%= link_to "Log out", logout_path, method: "delete" %></button>
-<h4>Welcome <%= @current_user %> </h4>
+<h4>Welcome <%= @current_user.name %> </h4>
 <h3>Import a File</h3>
 
   <%= form_tag import_purchases_path, multipart: true do %>
